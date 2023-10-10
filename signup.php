@@ -49,66 +49,68 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="UTF-8"> 
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <link rel="stylesheet" href="css/main.css"> 
-  <title>SIGNUP</title> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>SIGNUP</title>
 </head>
+
 <body>
-  <header>
-    <h1>Carwash Slot Availability and Reservations</h1>
-  </header>
+    <header>
+        <h1>Carwash Slot Availability and Reservations</h1>
+    </header>
 
-	<style type="text/css">
-	a {
-	  text-decoration: none;
-	  color: #fff;
-	}
-	
-	#text{
+    <style type="text/css">
+    a {
+        text-decoration: none;
+        color: #fff;
+    }
 
-		height: 25px;
-		border-radius: 5px;
-		padding: 4px;
-		border: solid thin #aaa;
-		width: 100%;
-	}
+    #text {
 
-	#button{
+        height: 25px;
+        border-radius: 5px;
+        padding: 4px;
+        border: solid thin #aaa;
+        width: 100%;
+    }
 
-		padding: 10px;
-		width: 100px;
-		color: white;
-		background-color: lightblue;
-		border: none;
-	}
+    #button {
 
-	#box{
+        padding: 10px;
+        width: 100px;
+        color: white;
+        background-color: lightblue;
+        border: none;
+    }
 
-		background-color: grey;
-		margin: auto;
-		width: 300px;
-		padding: 20px;
-	}
+    #box {
 
-	</style>
+        background-color: grey;
+        margin: auto;
+        width: 300px;
+        padding: 20px;
+    }
+    </style>
 
-	<div id="box">
-		
-		<form method="post">
-			<div style="font-size: 20px;margin: 10px;color: white;">Signup</div>
+    <div id="box">
 
-			<input id="text" type="text" name="surname" placeholder="SURNAME"><br><br>
-			<input id="text" type="text" name="given_name" placeholder="GIVEN NAME"><br><br>
-			<input id="text" type="text" name="user_name" placeholder=" USERNAME"><br><br>
-			<input id="text" type="password" name="password" placeholder="PASSWORD"><br><br>
+        <form method="post">
+            <div style="font-size: 20px;margin: 10px;color: white;">Signup</div>
 
-			<input id="button" type="submit" value="Signup"><br><br>
+            <input id="text" type="text" name="surname" placeholder="SURNAME"><br><br>
+            <input id="text" type="text" name="given_name" placeholder="GIVEN NAME"><br><br>
+            <input id="text" type="text" name="user_name" placeholder=" USERNAME"><br><br>
+            <input id="text" type="password" name="password" placeholder="PASSWORD"><br><br>
 
-			<a href="login.php">Click to Login</a><br><br>
-		</form>
-	</div>
+            <input id="button" type="submit" value="Signup"><br><br>
+
+            <a href="login.php">Click to Login</a><br><br>
+        </form>
+    </div>
 </body>
+
 </html>

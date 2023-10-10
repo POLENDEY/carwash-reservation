@@ -1,4 +1,5 @@
 <?php
+include("connection.php");
 
 function check_login($con)
 {
@@ -43,3 +44,25 @@ function random_num($length)
 
 	return $text;
 }
+
+function addCustomer($con, $customerName, $carBrand, $contactNum, $arrivalDate)
+{
+    // Escape user input to prevent SQL injection
+    $customerName = mysqli_real_escape_string($con, $customerName);
+    $carBrand = mysqli_real_escape_string($con, $carBrand);
+    $contactNum = mysqli_real_escape_string($con, $contactNum);
+
+    $query = "INSERT INTO reservation (customer_name, brand, contact_number, arrival_date) 
+              VALUES ('$customerName', '$carBrand', '$contactNum', '$arrivalDate')";
+
+    $result = mysqli_query($con, $query);
+
+    if ($result) {
+        return true; // Success
+    } else {
+        return false; // Error
+    }
+}
+
+
+?>

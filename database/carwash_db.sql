@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Oct 02, 2023 at 03:29 PM
--- Server version: 5.7.34
--- PHP Version: 8.2.6
+-- Host: 127.0.0.1
+-- Generation Time: Oct 10, 2023 at 04:16 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,8 +34,8 @@ CREATE TABLE `admin` (
   `given_name` varchar(100) NOT NULL,
   `user_name` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `admin`
@@ -43,6 +43,30 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`id`, `user_id`, `surname`, `given_name`, `user_name`, `password`, `date`) VALUES
 (1, 767291557489284677, 'Polendey ', 'John Paul', 'admin', '54321', '2023-09-27 12:43:01');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reservation`
+--
+
+CREATE TABLE `reservation` (
+  `id` int(11) NOT NULL,
+  `customer_name` varchar(255) NOT NULL,
+  `brand` varchar(255) NOT NULL,
+  `contact_number` int(11) NOT NULL,
+  `arrival_date` varchar(255) NOT NULL,
+  `date_created` date NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `reservation`
+--
+
+INSERT INTO `reservation` (`id`, `customer_name`, `brand`, `contact_number`, `arrival_date`, `date_created`) VALUES
+(1, 'ewqeq', 'ewqewq', 123, '2023-10-06 17:54:00', '2023-10-06'),
+(2, 'JASPER MACAREAG', 'TOYOTA', 21, '2023-10-06 18:02:00', '2023-10-06'),
+(3, 'ira', 'mitsubishi', 2147483647, '2023-10-06 18:03:00', '2023-10-06');
 
 -- --------------------------------------------------------
 
@@ -57,8 +81,8 @@ CREATE TABLE `users` (
   `given_name` varchar(100) NOT NULL,
   `user_name` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `users`
@@ -70,7 +94,10 @@ INSERT INTO `users` (`id`, `user_id`, `surname`, `given_name`, `user_name`, `pas
 (11, 80352, 'senpai', 'kazu', 'shesh', 'ywgagssgssgsg', '2023-09-27 12:20:29'),
 (3, 729411327962404486, 'Peter', 'Parker', 'peterparker', '54321', '2023-09-27 05:33:04'),
 (8, 3099735909003, 'Polendey ', 'John Paul', 'admin1', '54321', '2023-09-27 11:51:20'),
-(12, 5692947519188693877, 'Leoligao ', 'warren', 'warren', '54321', '2023-09-30 05:39:01');
+(12, 5692947519188693877, 'Leoligao ', 'warren', 'warren', '54321', '2023-09-30 05:39:01'),
+(13, 3213179, 'macaraeg', 'jasper', 'mjasper30', '123', '2023-10-06 09:18:34'),
+(14, 23137198321, 'magbanua', 'ira', 'ira', '123', '2023-10-06 09:18:30'),
+(15, 754054459, 'test', 'test', 'test', '123', '2023-10-06 09:10:38');
 
 --
 -- Indexes for dumped tables
@@ -86,6 +113,12 @@ ALTER TABLE `admin`
   ADD KEY `date` (`date`),
   ADD KEY `surname` (`surname`),
   ADD KEY `given_name` (`given_name`);
+
+--
+-- Indexes for table `reservation`
+--
+ALTER TABLE `reservation`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
@@ -109,10 +142,16 @@ ALTER TABLE `admin`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `reservation`
+--
+ALTER TABLE `reservation`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,12 +1,12 @@
 <?php
+$host = "localhost";
+$username = "root";
+$password = "";
+$database = "carwash_db";
 
-$dbhost = "localhost";
-$dbuser = "root";
-$dbpass = "";
-$dbname = "carwash_db";
+$con = mysqli_connect($host, $username, $password, $database);
 
-if(!$con = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname))
-{
-
-	die("failed to connect!");
+if (mysqli_connect_errno()) {
+    die("Failed to connect to MySQL: " . mysqli_connect_error());
 }
+?>

@@ -30,7 +30,7 @@ session_start();
 					{
 
 						$_SESSION['user_id'] = $user_data['user_id'];
-						header("Location: index.php");
+						header("Location: user_page.php");
 						die;
 					}
 				}
@@ -48,62 +48,63 @@ session_start();
 
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="UTF-8"> 
+    <meta charset="UTF-8">
 
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <link rel="stylesheet" href="css/main.css"> 
-  <title>LOGIN</title> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>LOGIN</title>
 </head>
+
 <body>
-  <header>
-<h1>Carwash Slot Availability and Reservations</h1>
-  </header>
+    <header>
+        <h1>Carwash Slot Availability and Reservations</h1>
+    </header>
 
-	<style type="text/css">
-	
-	#text{
+    <style type="text/css">
+    #text {
 
-		height: 25px;
-		border-radius: 5px;
-		padding: 4px;
-		border: solid thin #aaa;
-		width: 100%;
-	}
+        height: 25px;
+        border-radius: 5px;
+        padding: 4px;
+        border: solid thin #aaa;
+        width: 100%;
+    }
 
-	#button{
+    #button {
 
-		padding: 10px;
-		width: 100px;
-		color: white;
-		background-color: lightblue;
-		border: none;
-	}
+        padding: 10px;
+        width: 100px;
+        color: white;
+        background-color: lightblue;
+        border: none;
+    }
 
-	#box{
+    #box {
 
-		background-color: grey;
-		margin: auto;
-		width: 300px;
-		padding: 20px;
-	}
+        background-color: grey;
+        margin: auto;
+        width: 300px;
+        padding: 20px;
+    }
+    </style>
 
-	</style>
+    <div id="box">
 
-	<div id="box">
-		
-		<form method="post">
-			<div style="font-size: 20px;margin: 10px;color: white;">Login</div>
+        <form method="post">
+            <div style="font-size: 20px;margin: 10px;color: white;">Login</div>
 
-			<input id="text" type="text" name="user_name" placeholder="USERNAME"><br><br>
-			<input id="text" type="password" name="password" placeholder="PASSWORD"><br><br>
+            <input id="text" type="text" name="user_name" placeholder="USERNAME"><br><br>
+            <input id="text" type="password" name="password" placeholder="PASSWORD"><br><br>
 
-			<input id="button" type="submit" value="Login"><br><br>
+            <input id="button" type="submit" value="Login"><br><br>
 
-			<a href="signup.php" id="signup">Click to Signup</a><br><br>
-		</form>
-	</div>
+            <a href="signup.php" id="signup">Click to Signup</a><br><br>
+        </form>
+    </div>
 </body>
+
 </html>
